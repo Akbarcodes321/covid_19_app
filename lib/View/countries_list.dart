@@ -16,10 +16,11 @@ class _CountriesListState extends State<CountriesList> {
   Widget build(BuildContext context) {
     StatsServices statsServices = StatsServices();
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff666666),
       appBar: AppBar(
-        elevation: 0,
+        leading: BackButton(
+          color: Colors.white,
+        ),
         backgroundColor: const Color(0xff666666),
       ),
       body: SafeArea(

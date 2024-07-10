@@ -52,7 +52,7 @@ class _DetailedScreenState extends State<DetailedScreen> {
               colorList: colorList,
             ),
           ),
-          const SizedBox(height: 70,),
+          const SizedBox(height: 30,),
           Stack(
             alignment: Alignment.topCenter,
             children: [
@@ -78,7 +78,8 @@ class _DetailedScreenState extends State<DetailedScreen> {
                 backgroundImage: NetworkImage(widget.image),
               )
             ],
-          )
+          ),
+          SizedBox(height: 100,)
         ],
       ),
     );
