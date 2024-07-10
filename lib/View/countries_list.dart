@@ -16,6 +16,7 @@ class _CountriesListState extends State<CountriesList> {
   Widget build(BuildContext context) {
     StatsServices statsServices = StatsServices();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xff666666),
       appBar: AppBar(
         elevation: 0,
@@ -49,10 +50,10 @@ class _CountriesListState extends State<CountriesList> {
                 future: statsServices.countriesListAPI(),
                 builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
                   if (!snapshot.hasData) {
-                    return const Expanded(
-                        child: Center(child: CircularProgressIndicator(color: Colors.white,)));
+                    return const Center(child: CircularProgressIndicator(color: Colors.white,));
                   } else {
                     return ListView.builder(
+                      shrinkWrap: true,
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         String name = snapshot.data![index]['country'];
